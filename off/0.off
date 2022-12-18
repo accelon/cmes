@@ -1,1 +1,4 @@
 ^:<ptk=cm zh=醫|中醫 en="cm" lang=zh picker=symtom>
+^:symtoms<caption=病況 preload=true savelinepos=true>
+^:disease<caption=病症>
+^:ck<id=unique preload=true bracket=false>
