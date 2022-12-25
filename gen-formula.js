@@ -40,8 +40,6 @@ const parseIngredient=(linetext, seq,line)=>{
             error++
             if (mem.length>8) console.log(seq+1,mem)
         }
-
-
     }
     ingredients[seq].sort();
 }
@@ -60,7 +58,7 @@ console.log('correct',correct,'error',error, 'rate',(correct-error)/correct)
 
 const gen_formula_ingredient=()=>{
     //serial is one-base
-    ingredients.unshift('^:<name=ingredients keytype=serial preload=true caption=配方之藥>member=keys:ingredient');
+    ingredients.unshift('^:<name=ingredients keytype=serial preload=true caption=配方之藥>member=keys:medicine');
     writeChanged('off/7-ingredients.tsv',ingredients.join('\n'),true);
 }
 
@@ -68,7 +66,7 @@ const gen_formula_ingredient=()=>{
 const fill_ingredient_formula=()=>{
     const arr=fromObj(ingredient_members,(a,b)=>a+'\t'+b.join(','));
     arr.sort(alphabetically0);
-    arr.unshift('^:<name=ingredient preload=true caption=藥之配方>name:string\tmember=numbers:ingredients');
+    arr.unshift('^:<name=ingredient preload=true caption=藥之配方>name=string\tmember=numbers:ingredients');
     writeChanged('off/8-ingredient.tsv',arr.join('\n'),true);
   
 }
