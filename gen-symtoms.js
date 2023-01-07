@@ -2,6 +2,7 @@ import {alphabetically0, fromObj,nodefs,readTextLines, writeChanged} from 'ptk/n
 await nodefs;
 
 const lines=readTextLines('中醫癥狀鑒別診斷學.off')
+const pulse=readTextLines('700-脈.tsv')
 const out=[];
 let i=0,group=0;
 const groups={
@@ -60,5 +61,6 @@ while (i<lines.length) {
 
     } else i++;
 }
+out.push(...pulse);//
 out.unshift('^:<name=symtom preload=true caption=病況>\tgroup=string\tcaption=string\talias=string\tdef=string');
 writeChanged('off/1-symtom.tsv',out.join('\n'),true)
