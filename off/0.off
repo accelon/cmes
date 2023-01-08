@@ -1,11 +1,11 @@
-^:<ptk=cm zh=醫古籍 en=cm lang=zh picker=symtom>
+^:<ptk=cm zh=醫古籍 en=cm lang=zh template=cm picker=symtom>
 ^:chinese<caption=中醫>
 ^:western<caption=西醫>
 ^:ill<caption=症>
 ^:sickloc<caption=病位>
 ^:sickcause<caption=病因>
 ^:sick<caption=證>
-^:sign<caption=(候證) backlink=partialchunkid prefix=h>
+^:sign<caption=候證 backlink=partialchunkid prefix=h>
 ^:finger<caption=指紋>
 ^:norm<caption=通稱>
 ^:combo<caption=組合>

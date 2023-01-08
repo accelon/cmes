@@ -30,7 +30,8 @@ color: hsl(200,70%,70%); font-size:80%;
  .cm.norm:after { content:"通";  border:solid 1px gray; border-radius:0.25em;color:gray}
  .cm.combo:after { content:"組";  border:solid 1px gray; border-radius:0.25em;color:gray}
  .cm.tounge:after { content:"舌";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.alias:after { content:"別";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.alias_start:before { content:"別";  border:solid 1px gray; border-radius:0.25em;color:gray}
  .cm.origin_start:before { content:"出";  border:solid 1px gray; border-radius:0.25em;color:gray}
 
- 
+ .cm.sick{color:rgb(197, 135, 47)}
+ .cm.sign{color:rgb(255, 170, 0)}
