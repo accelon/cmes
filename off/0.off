@@ -1,7 +1,41 @@
-^:<ptk=cm zh=醫|中醫 en=cm lang=zh picker=symtom>
-^:symtoms<caption=病況 preload=true savelinepos=true>
+^:<ptk=cm zh=醫古籍 en=cm lang=zh picker=symtom>
+^:chinese<caption=中醫>
+^:western<caption=西醫>
+^:ill<caption=症>
+^:sickloc<caption=病位>
+^:sickcause<caption=病因>
+^:sick<caption=證>
+^:sign<caption=(候證) backlink=partialchunkid prefix=h>
+^:finger<caption=指紋>
+^:norm<caption=通稱>
+^:combo<caption=組合>
+^:tounge<caption=舌象>
+^:pulse<caption=脈象>
+^:author<caption=作者>
+^:dynasty<caption=朝代>
+^:source<caption=來源>
+^:symtoms<caption=病況 savelinepos=true>
 ^:disease<caption=病症>
-^:medicine<caption=方>
+^:prescription<caption=方>
+^:ingredients<caption=配方 id=unique_number backref=ingredient activelinemenu=approxbackref>
+^:medicines<caption=藥名清單>
+^:recipe<caption=煎藥法>
 ^:pg<caption=頁>
 ^:remedy<caption=治法>
 ^:snote<caption=病況注解>
+^:h<caption=標題>
+^:append
+^:fang<caption=方>
+^:formulas<caption=方解>
+^:formula<caption=方>
+^:origin<caption=出處>
+^:alias<caption=又名>
+^:cure<caption=治>
+^:poem<caption=詩>
+^:juan<caption=卷>
+^:u<caption=小標>
+^:dnote<caption=雙行夾注>
+^:img<caption=圖>
+^:fa<caption=法>
+^:story<caption=故事>
+^:medicine<caption=藥>

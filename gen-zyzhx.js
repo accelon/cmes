@@ -1,24 +1,33 @@
 import {unique,alphabetically,Offtext,cjkPhrases,removeBracket,alphabetically0, fromObj,nodefs,parseOfftext,readTextLines, writeChanged} from 'ptk/nodebundle.cjs'
 await nodefs;
-import {Traits} from './src/code.js'
-import { Factors } from './src/pattern.js';
+import {SickCauses,SickLocations,SickSigns} from './src/code.js'
+import { Factors } from './src/manifestation.js';
 const needtag={
+
 ill:1,
 norm:2,western:2,chinese:2,
-symtoms:2,pulse:2,tounge:2,combo:2,
-formula:3, origin:3,
+symtoms:2,pulse:2,tounge:2,combo:2,ingredients:2,
+formula:3, origin:3,alias:3
 }
+
 let tid='';
-const rawtext=readTextLines('./traits.off');
+const rawtext=readTextLines('./zyzhx-raw.off');
+
 
 //按照原書的順序，箤取需要的 tag
+const diseasename=tid=>{ //證候名
+    return tid.replace(/l(\d+)z(\d+)h(\d+)/,(m,l,z,h)=>{
+        return '【'+SickCauses['l'+l]+SickLocations['z'+z]+'證.'+SickSigns['h'+h]+'候】'
+        +'^sickloc'+z+'^sickcause'+l+ '^sick'+l+'z'+z+'^sign'+h;
+    })
+}
 const extractneedtag=()=>{
     const out=[];
     for (let i=0;i<rawtext.length;i++) {
         const line=rawtext[i];
         if (line.slice(0,3)=='^ck') {
             tid='l'+line.slice(3,12);
-            out.push('^ck'+line.slice(3,12))
+            out.push('^ck'+line.slice(3,12)+diseasename(tid))
             continue;
         }
         line.replace(/\^([a-z]+)(\d*)([^\^]+)/g,(m,tag,n,content)=>{
@@ -68,7 +77,8 @@ const parseField=lines=>{
 
 
 const rawfields=extractneedtag();
-writeChanged('zyzhx.off',rawfields.join('\n'),true);
+rawfields.unshift('^ak1【證候】^bk1【證候】');
+writeChanged('off/zyzhx.off',rawfields.join('\n'),true);
 
 parseField(rawfields);
 
@@ -187,25 +197,39 @@ const scoreMedicine=(line, medicines)=>{
 const tagIngredient=(lines)=>{
     const medicines={};
     let autotagcount=0;
+    const out=[];
     const arr=readTextLines('off/2-medicine.tsv').map(line=>{
         return line.split('\t')[0]
     })
     for (let i=0;i<arr.length;i++) {
         medicines[arr[i]]=true;
     }
-    // console.log(lines)
     for (let i=0;i<lines.length;i++) {
-        const line=lines[i];
-        if (line.charAt(0)=='^') continue;
-        const score=scoreMedicine(line, medicines);
-        if (score>0.6) {
-            lines[i]='^ingredients '+lines[i];
-            autotagcount++;
+        let line=lines[i];
+        if (line.charAt(0)!=='^') {
+            const score=scoreMedicine(line, medicines);
+            if (score>0.3) {
+                line='^ingredients0 '+line;
+                autotagcount++;
+            }  
         }
+        out.push(line)
     }
-    console.log('autotag',autotagcount)
-    writeChanged('traits-autotag.off',lines.join('\n'),true)
+    if(autotagcount) {
+        // numbering ingredients
+        let count=0;
+        for (let i=0;i<out.length;i++) {
+            if (out[i].slice(0,12)=='^ingredients') {
+                out[i]=out[i].replace(/^\^ingredients\d*/,()=>{
+                    return '^ingredients'+ (++count);
+                })
+            }
+        }
+        console.log('new ingredient tag',autotagcount,'all ingredients',count);
+        writeChanged('zyzhx-autotag.off',out.join('\n'),true)
+    }
 }
+
 
 
 

@@ -1,0 +1,36 @@
+.cm.symtoms 
+{ 
+    color: lightblue;
+}
+
+.cm .disease 
+{ 
+}
+.cm .ck 
+{ 
+}
+.cm.snote {
+color: hsl(200,70%,70%); font-size:80%;
+}
+
+.cm.remedy {
+ color: purple
+ }
+ .cm.formula {
+ color: lightsalmon
+ }
+ .cm.symtoms:after { content:"況";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.ingredients:after { content:"方";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.cure:after { content:"治";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.ill { color:burlywood}
+ .cm.ill_start:before{ content:"症";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.western:after { content:"西";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.chinese:after { content:"中";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.pulse:after { content:"脈";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.norm:after { content:"通";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.combo:after { content:"組";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.tounge:after { content:"舌";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.alias:after { content:"別";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.origin_start:before { content:"出";  border:solid 1px gray; border-radius:0.25em;color:gray}
+
+ 
