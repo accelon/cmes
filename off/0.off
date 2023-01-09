@@ -14,7 +14,7 @@
 ^:author<caption=作者>
 ^:dynasty<caption=朝代>
 ^:source<caption=來源>
-^:symtoms<caption=病況 savelinepos=true>
+^:symtom<caption=病況 savelinepos=true>
 ^:disease<caption=病症>
 ^:prescription<caption=方>
 ^:ingredients<caption=配方 id=unique_number backref=ingredient activelinemenu=approxbackref>

@@ -11,7 +11,7 @@ const needtag={
 
 ill:1,
 norm:2,western:2,chinese:2,
-symtoms:2,pulse:2,tounge:2,combo:2,ingredients:2,
+symtom:2,pulse:2,tounge:2,combo:2,ingredients:2,
 formula:3, origin:3,alias:3
 }
 
@@ -101,17 +101,17 @@ export const encodeLines=rawfields=>{
             symtomcodes='',pulsecodes='',toungecodes='';
         } else if (tag=='symto') {
             const words=cjkPhrases(line.slice(8));
-            symtomcodes+=encodeFactors(words, 'symtoms').join('');
+            symtomcodes+=encodeFactors(words, 'symtom').join('');
         } else if (tag=='toung') {
-            const words=cjkPhrases(line.slice(8));
+            const words=cjkPhrases(line.slice(7));
             toungecodes+=encodeFactors(words, 'tounge').join('');
         } else if (tag=='pulse') {
             const words=cjkPhrases(line.slice(6));
             pulsecodes+=encodeFactors(words, 'pulse').join('');
         }
     }
-    out.unshift('^:<name=manifest caption=症象 keytype=serial preload=true>ill:unique_number\tsymtom\ttounge\tpulse');
-    writeChanged('off/3manifest.tsv',out.join('\n'),true);
+    out.unshift('^:<name=manifest caption=症象 textstart=zyzhx.off keytype=textline preload=true>ill=unique_number\tsymtom\ttounge\tpulse');
+    writeChanged('off/3-manifest.tsv',out.join('\n'),true);
 }
 encodeLines(rawfields);
 

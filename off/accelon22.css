@@ -1,7 +1,3 @@
-.cm.symtoms 
-{ 
-    color: lightblue;
-}
 
 .cm .disease 
 { 
@@ -19,7 +15,7 @@ color: hsl(200,70%,70%); font-size:80%;
  .cm.formula {
  color: lightsalmon
  }
- .cm.symtoms:after { content:"況";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.symtom:after { content:"況";  border:solid 1px gray; border-radius:0.25em;color:gray}
  .cm.ingredients:after { content:"方";  border:solid 1px gray; border-radius:0.25em;color:gray}
  .cm.cure:after { content:"治";  border:solid 1px gray; border-radius:0.25em;color:gray}
  .cm.ill { color:burlywood}
