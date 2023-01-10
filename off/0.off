@@ -1,7 +1,6 @@
 ^:<ptk=cm zh=醫古籍 en=cm lang=zh template=cm picker=symtom>
 ^:chinese<caption=中醫>
 ^:western<caption=西醫>
-^:ill<caption=症>
 ^:sickloc<caption=病位>
 ^:sickcause<caption=病因>
 ^:sick<caption=證>
@@ -9,8 +8,9 @@
 ^:finger<caption=指紋>
 ^:norm<caption=通稱>
 ^:combo<caption=組合>
-^:tounge<caption=舌象>
-^:pulse<caption=脈象>
+^:ill<caption=症 savelinepos=true bracket=false>
+^:tounge<caption=舌象  savelinepos=true>
+^:pulse<caption=脈象  savelinepos=true>
 ^:author<caption=作者>
 ^:dynasty<caption=朝代>
 ^:source<caption=來源>

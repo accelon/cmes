@@ -88,16 +88,15 @@ export const encodeLines=rawfields=>{
     const out=[];
     //keyed by illness linenumber
     //multiple symtoms/tounge/pulse in same ill are combined
-    let toungecodes='',symtomcodes='',pulsecodes='';
+    let toungecodes='',symtomcodes='',pulsecodes='',illcount=0;
     for (let i=0;i<rawfields.length;i++) {
         const line=rawfields[i];
-        const tag=line.slice(1,6);
-        
+        const tag=line.slice(1,6);      
         if (tag.slice(0,3)=='ill') {
-            if (symtomcodes+pulsecodes+toungecodes) {
-                out.push( illline+'\t'+symtomcodes+'\t'+toungecodes+'\t'+pulsecodes);
+            if (illcount) {
+                out.push( symtomcodes+'\t'+toungecodes+'\t'+pulsecodes);
             }
-            illline=i;
+            illcount++;
             symtomcodes='',pulsecodes='',toungecodes='';
         } else if (tag=='symto') {
             const words=cjkPhrases(line.slice(8));
@@ -110,7 +109,8 @@ export const encodeLines=rawfields=>{
             pulsecodes+=encodeFactors(words, 'pulse').join('');
         }
     }
-    out.unshift('^:<name=manifest caption=症象 textstart=zyzhx.off keytype=textline preload=true>ill=unique_number\tsymtom\ttounge\tpulse');
+    out.push( symtomcodes+'\t'+toungecodes+'\t'+pulsecodes);
+    out.unshift('^:<name=manifest caption=症象 master=ill keytype=serial preload=true>symtom\ttounge\tpulse');
     writeChanged('off/3-manifest.tsv',out.join('\n'),true);
 }
 encodeLines(rawfields);
