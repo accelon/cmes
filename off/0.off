@@ -1,4 +1,4 @@
-^:<ptk=cm zh=醫古籍 en=cm lang=zh template=cm picker=symtom>
+^:<ptk=cm zh=醫古籍 en=cm lang=zh template=cm>
 ^:chinese<caption=中醫>
 ^:western<caption=西醫>
 ^:sickloc<caption=病位>
@@ -9,12 +9,12 @@
 ^:norm<caption=通稱>
 ^:combo<caption=組合>
 ^:ill<caption=症 savelinepos=true bracket=false>
-^:tounge<caption=舌象  savelinepos=true>
-^:pulse<caption=脈象  savelinepos=true>
+^:tounge<caption=舌象  savelinepos=true activelinemenu=approxbackref>
+^:pulse<caption=脈象  savelinepos=true activelinemenu=approxbackref>
 ^:author<caption=作者>
 ^:dynasty<caption=朝代>
 ^:source<caption=來源>
-^:symtom<caption=病況 savelinepos=true>
+^:symtom<caption=病況 savelinepos=true activelinemenu=approxbackref>
 ^:disease<caption=病症>
 ^:prescription<caption=方>
 ^:ingredients<caption=配方 id=unique_number backref=ingredient activelinemenu=approxbackref>
