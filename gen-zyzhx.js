@@ -8,7 +8,7 @@ import {meta_cm} from 'ptk/nodebundle.cjs'
 const {SickFactors,encodeFactor,encodeFactors} = meta_cm;
 
 const needtag={
-
+ck:0,
 ill:1,
 norm:2,western:2,chinese:2,
 symtom:2,pulse:2,tounge:2,combo:2,ingredients:2,
@@ -35,13 +35,14 @@ const extractneedtag=()=>{
 }
 const TagStat={};
 const illness={};
-const addPhrases=(t, Obj , Factor)=>{
+const addPhrases=(t, Obj , Factor,ck)=>{
     const words=cjkPhrases(t);
     for (let i=0;i<words.length;i++) {
         const w=words[i];
         const code=encodeFactor(w, Factor).join('')||' ';
-        if (!Obj[w]) Obj[w]={count:0, code};
+        if (!Obj[w]) Obj[w]={count:0, code, ck:[]};
         Obj[w].count++;
+        Obj[w].ck.push(ck)
     }
 }
 const addIllness=(t,Obj)=>{
@@ -49,19 +50,22 @@ const addIllness=(t,Obj)=>{
     Obj[t]++;
 }
 const parseField=lines=>{
+    let ck=0;
     for (let i=0;i<lines.length;i++) {
         const line=lines[i];
         const ot=new Offtext(line);
         for (let j=0;j<ot.tags.length;j++) {
             const tag=ot.tags[j];
             const tagtype=needtag[tag.name];
+            if (tag.name=='ck') ck++; //one-base
             if (tagtype==1) {
                 const t=removeBracket(ot.tagText(j).trim());
                 if (!t) console.log('error empty illness',i+1,line)
                 addIllness(t, illness);
             } else if (tagtype==2) {
                 if (!TagStat[tag.name]) TagStat[tag.name]={};
-                addPhrases(ot.plain.slice(tag.offset).trim(),TagStat[tag.name], SickFactors[tag.name]);
+                addPhrases(ot.plain.slice(tag.offset).trim()
+                ,TagStat[tag.name], SickFactors[tag.name],ck);
             } else if (tagtype==3) {
                 const t=removeBracket(ot.tagText(j).trim());
                 if (!TagStat[tag.name]) TagStat[tag.name]={};
@@ -83,6 +87,15 @@ for (let key in TagStat) {
     arr.sort((a,b)=>b[1]-a[1]);
     writeChanged('zyzhx-'+key+'.txt', arr.join('\n'),true);
 }
+
+const writePhraseIndex=key=>{
+    const arr=fromObj(TagStat[key],(a,b)=>a+'\t'+b.ck);
+    arr.unshift('^:<caption=西醫 bme=true preload=true name='+key+'>'+key+'\tchunk=numbers');
+    writeChanged('off/1'+key+'.tsv', arr.join('\n'),true);
+}
+writePhraseIndex('western','西醫');
+
+
 export const encodeLines=rawfields=>{
     let codes='',illline=0;
     const out=[];
