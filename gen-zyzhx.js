@@ -95,7 +95,6 @@ const writePhraseIndex=key=>{
 }
 writePhraseIndex('western','西醫');
 
-
 export const encodeLines=rawfields=>{
     let codes='',illline=0;
     const out=[];

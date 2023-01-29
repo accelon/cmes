@@ -17,7 +17,11 @@ color: hsl(200,70%,70%); font-size:80%;
  }
  .cm.symtom:after { content:"況";  border:solid 1px gray; border-radius:0.25em;color:gray}
  .cm.ingredients:after { content:"方";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.recipe:after { content:"製";  border:solid 1px gray; border-radius:0.25em;color:gray}
  .cm.cure:after { content:"治";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.case:after { content:"案";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.pathogenesis:after { content:"機";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cm.diagnose:after { content:"辨";  border:solid 1px gray; border-radius:0.25em;color:gray}
  .cm.ill { color:burlywood}
  .cm.ill_start:before{ content:"症";  border:solid 1px gray; border-radius:0.25em;color:gray}
  .cm.western:after { content:"西";  border:solid 1px gray; border-radius:0.25em;color:gray}
@@ -31,3 +35,8 @@ color: hsl(200,70%,70%); font-size:80%;
 
  .cm.sick{color:rgb(197, 135, 47)}
  .cm.sign{color:rgb(255, 170, 0)}
+
+.cm.decoction_div { font-family: DFKai-SB;color:papayawhip}
+.cm.origtext_div { font-family: DFKai-SB;font-size:120%}
+.cm.ingredients_div {font-family: DFKai-SB;}
+.cm.diagnose_div {color:papayawhip}

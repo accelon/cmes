@@ -1,7 +1,10 @@
 ^:<ptk=cm zh=醫古籍 en=cm lang=zh template=cm>
 ^:chinese<caption=中醫>
+^:decoction<id=number caption=湯方 bracket=false>
 ^:western<caption=西醫>
 ^:sickloc<caption=病位>
+^:origtext<caption=原文>
+^:case<caption=案>
 ^:sickcause<caption=病因>
 ^:sick<caption=證>
 ^:sign<caption=候證 backlink=partialchunkid prefix=h>
@@ -9,6 +12,8 @@
 ^:norm<caption=通稱>
 ^:combo<caption=組合>
 ^:ill<caption=症 savelinepos=true bracket=false>
+^:pathogenesis<caption=病機>
+^:diagnose<caption=象 savelinepos=true>
 ^:tounge<caption=舌象  savelinepos=true activelinemenu=approxbackref>
 ^:pulse<caption=脈象  savelinepos=true activelinemenu=approxbackref>
 ^:author<caption=作者>
@@ -17,7 +22,7 @@
 ^:symtom<caption=病況 savelinepos=true activelinemenu=approxbackref>
 ^:disease<caption=病症>
 ^:prescription<caption=方>
-^:ingredients<caption=配方 id=unique_number backref=ingredient activelinemenu=approxbackref>
+^:ingredients<caption=配方 id=unique_number backref=ingredient activelinemenu=approxbackref reset=bk>
 ^:medicines<caption=藥名清單>
 ^:recipe<caption=煎藥法>
 ^:pg<caption=頁>
