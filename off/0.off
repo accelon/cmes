@@ -1,4 +1,4 @@
-^:<ptk=cm zh=醫古籍 en=cm lang=zh template=cm>
+^:<ptk=cm zh=醫古籍 en=cm lang=zh template=cm toctag=ck>
 ^:chinese<caption=中醫>
 ^:decoction<id=number caption=湯方 bracket=false>
 ^:western<caption=西醫>
@@ -13,7 +13,7 @@
 ^:combo<caption=組合>
 ^:ill<caption=症 savelinepos=true bracket=false>
 ^:pathogenesis<caption=病機>
-^:diagnose<caption=象 savelinepos=true>
+^:diagnose<caption=象 savelinepos=true activelinemenu=approxbackref>
 ^:tounge<caption=舌象  savelinepos=true activelinemenu=approxbackref>
 ^:pulse<caption=脈象  savelinepos=true activelinemenu=approxbackref>
 ^:author<caption=作者>
