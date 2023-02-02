@@ -1,42 +1,42 @@
 
-.cm .disease 
+.cmes .disease 
 { 
 }
-.cm .ck 
+.cmes .ck 
 { 
 }
-.cm.snote {
+.cmes.snote {
 color: hsl(200,70%,70%); font-size:80%;
 }
 
-.cm.remedy {
+.cmes.remedy {
  color: purple
  }
- .cm.formula {
+ .cmes.formula {
  color: lightsalmon
  }
- .cm.symtom:after { content:"況";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.ingredients:after { content:"方";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.recipe:after { content:"製";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.cure:after { content:"治";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.case:after { content:"案";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.pathogenesis:after { content:"機";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.diagnose:after { content:"辨";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.ill { color:burlywood}
- .cm.ill_start:before{ content:"症";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.western:after { content:"西";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.chinese:after { content:"中";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.pulse:after { content:"脈";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.norm:after { content:"通";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.combo:after { content:"組";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.tounge:after { content:"舌";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.alias_start:before { content:"別";  border:solid 1px gray; border-radius:0.25em;color:gray}
- .cm.origin_start:before { content:"出";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.symtom:after { content:"況";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.ingredients:after { content:"方";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.recipe:after { content:"製";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.cure:after { content:"治";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.case:after { content:"案";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.pathogenesis:after { content:"機";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.diagnose:after { content:"辨";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.ill { color:burlywood}
+ .cmes.ill_start:before{ content:"症";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.western:after { content:"西";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.chinese:after { content:"中";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.pulse:after { content:"脈";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.norm:after { content:"通";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.combo:after { content:"組";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.tounge:after { content:"舌";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.alias_start:before { content:"別";  border:solid 1px gray; border-radius:0.25em;color:gray}
+ .cmes.origin_start:before { content:"出";  border:solid 1px gray; border-radius:0.25em;color:gray}
 
- .cm.sick{color:rgb(197, 135, 47)}
- .cm.sign{color:rgb(255, 170, 0)}
+ .cmes.sick{color:rgb(197, 135, 47)}
+ .cmes.sign{color:rgb(255, 170, 0)}
 
-.cm.decoction_div { font-family: DFKai-SB;color:papayawhip}
-.cm.origtext_div { font-family: DFKai-SB;font-size:120%}
-.cm.ingredients_div {font-family: DFKai-SB;}
-.cm.diagnose_div {color:papayawhip}
+.cmes.decoction_div { font-family: "DFHKStdKai-B5" , "DFKai-SB";color:papayawhip}
+.cmes.origtext_div { font-family: "DFHKStdKai-B5", "DFKai-SB";font-size:120%}
+.cmes.ingredients_div {font-family: "DFHKStdKai-B5", "DFKai-SB";}
+.cmes.diagnose_div {color:papayawhip}

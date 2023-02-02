@@ -1,4 +1,7 @@
-^:<ptk=cm zh=醫古籍 en=cm lang=zh template=cm toctag=ck>
+^:<ptk=cmes zh=醫䊺 en=cmes lang=zh template=cm toctag=ck>
+^:au
+^:xu
+^:dy
 ^:chinese<caption=中醫>
 ^:decoction<id=number caption=湯方 bracket=false>
 ^:western<caption=西醫>
@@ -22,7 +25,7 @@
 ^:symtom<caption=病況 savelinepos=true activelinemenu=approxbackref>
 ^:disease<caption=病症>
 ^:prescription<caption=方>
-^:ingredients<caption=配方 id=unique_number backref=ingredient activelinemenu=approxbackref reset=bk>
+^:ingredients<caption=配方 id=number backref=ingredient activelinemenu=approxbackref reset=bk>
 ^:medicines<caption=藥名清單>
 ^:recipe<caption=煎藥法>
 ^:pg<caption=頁>
@@ -37,7 +40,7 @@
 ^:alias<caption=又名>
 ^:cure<caption=治>
 ^:poem<caption=詩>
-^:juan<caption=卷>
+^:juan<caption=卷 id=unique_number>
 ^:u<caption=小標>
 ^:dnote<caption=雙行夾注>
 ^:img<caption=圖>
